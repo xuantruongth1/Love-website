@@ -12,7 +12,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
         pass
 
 load_dotenv()
-DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('DATABASE_URL') or os.getenv('DATABASE_URI')
 if not DATABASE_URL:
     print("WARNING: DATABASE_URL not found in .env")
 
