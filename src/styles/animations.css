@@ -1,0 +1,162 @@
+/* ============================================================
+   Custom CSS animations
+   ============================================================ */
+
+/* Heartbeat mạnh hơn */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.3); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.2); }
+  70%       { transform: scale(1); }
+}
+.animate-heartbeat { animation: heartbeat 1.6s ease-in-out infinite; }
+
+/* Float nhẹ nhàng */
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-10px) rotate(2deg); }
+}
+.animate-float-soft { animation: floatSoft 4s ease-in-out infinite; }
+
+/* Shimmer loading skeleton */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--surface-alt) 25%, var(--surface) 50%, var(--surface-alt) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Glow nhấp nháy */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 107, 157, 0.4); }
+  50%       { box-shadow: 0 0 24px rgba(255, 107, 157, 0.8); }
+}
+.animate-glow { animation: glow 2s ease-in-out infinite; }
+
+/* Bounce vào */
+@keyframes bounceIn {
+  0%   { transform: scale(0);   opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-bounce-in { animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+/* Fade slide up */
+@keyframes fadeSlideUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-slide-up { animation: fadeSlideUp 0.5s ease-out forwards; }
+
+/* Sparkle */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+.animate-sparkle { animation: sparkle 1.5s ease-in-out infinite; }
+
+/* Writing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.animate-cursor { animation: blink 1s step-end infinite; }
+
+/* ── Nền gradient thở ─────────────────────────────────────── */
+@keyframes bgBreath {
+  0%, 100% { background-position: 0% 50%; }
+  33%       { background-position: 60% 20%; }
+  66%       { background-position: 100% 80%; }
+}
+
+/* ── Trái tim bay ────────────────────────────────────────── */
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) translateX(0) rotate(-12deg) scale(0.5);
+    opacity: 0;
+  }
+  8% { opacity: 0.55; }
+  30% {
+    transform: translateY(-30vh) translateX(14px) rotate(6deg) scale(0.85);
+  }
+  60% {
+    transform: translateY(-60vh) translateX(-10px) rotate(-4deg) scale(0.95);
+    opacity: 0.35;
+  }
+  90% {
+    transform: translateY(-88vh) translateX(8px) rotate(10deg) scale(1.05);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-105vh) translateX(0) rotate(15deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  animation: floatHeart linear infinite;
+}
+
+/* ── Ảnh bay — 4 kiểu di chuyển ────────────────────────────── */
+
+/* Kiểu A: thẳng lên, lắc nhẹ */
+@keyframes floatPhotoA {
+  0%   { transform: translateY(0)      translateX(0)     rotate(-5deg) scale(0.75); opacity: 0; }
+  5%   { opacity: 0.78; }
+  35%  { transform: translateY(-30vh)  translateX(15px)  rotate(4deg)  scale(0.9);  opacity: 0.7; }
+  65%  { transform: translateY(-62vh)  translateX(-10px) rotate(-3deg) scale(0.95); opacity: 0.5; }
+  88%  { transform: translateY(-88vh)  translateX(8px)   rotate(6deg)  scale(1);    opacity: 0.15; }
+  100% { transform: translateY(-108vh) translateX(0)     rotate(8deg)  scale(1.05); opacity: 0; }
+}
+
+/* Kiểu B: vòng cung sang phải */
+@keyframes floatPhotoB {
+  0%   { transform: translateY(0)      translateX(0)     rotate(5deg)  scale(0.7);  opacity: 0; }
+  5%   { opacity: 0.75; }
+  30%  { transform: translateY(-25vh)  translateX(30px)  rotate(-4deg) scale(0.88); opacity: 0.68; }
+  55%  { transform: translateY(-52vh)  translateX(55px)  rotate(6deg)  scale(0.94); opacity: 0.55; }
+  80%  { transform: translateY(-78vh)  translateX(40px)  rotate(-2deg) scale(1);    opacity: 0.2; }
+  100% { transform: translateY(-105vh) translateX(20px)  rotate(4deg)  scale(1.05); opacity: 0; }
+}
+
+/* Kiểu C: vòng cung sang trái */
+@keyframes floatPhotoC {
+  0%   { transform: translateY(0)      translateX(0)     rotate(-5deg) scale(0.72); opacity: 0; }
+  5%   { opacity: 0.76; }
+  30%  { transform: translateY(-28vh)  translateX(-28px) rotate(3deg)  scale(0.87); opacity: 0.66; }
+  55%  { transform: translateY(-55vh)  translateX(-50px) rotate(-6deg) scale(0.93); opacity: 0.52; }
+  80%  { transform: translateY(-80vh)  translateX(-35px) rotate(4deg)  scale(0.98); opacity: 0.18; }
+  100% { transform: translateY(-108vh) translateX(-18px) rotate(-3deg) scale(1.04); opacity: 0; }
+}
+
+/* Kiểu D: sóng sin — lắc nhiều hơn */
+@keyframes floatPhotoD {
+  0%   { transform: translateY(0)      translateX(0)     rotate(-8deg) scale(0.68); opacity: 0; }
+  5%   { opacity: 0.72; }
+  20%  { transform: translateY(-18vh)  translateX(22px)  rotate(5deg)  scale(0.82); opacity: 0.65; }
+  40%  { transform: translateY(-38vh)  translateX(-18px) rotate(-4deg) scale(0.9);  opacity: 0.62; }
+  60%  { transform: translateY(-58vh)  translateX(20px)  rotate(6deg)  scale(0.95); opacity: 0.45; }
+  80%  { transform: translateY(-78vh)  translateX(-12px) rotate(-3deg) scale(1);    opacity: 0.18; }
+  100% { transform: translateY(-108vh) translateX(5px)   rotate(8deg)  scale(1.05); opacity: 0; }
+}
+
+.floating-photo-a { animation: floatPhotoA linear infinite; }
+.floating-photo-b { animation: floatPhotoB linear infinite; }
+.floating-photo-c { animation: floatPhotoC linear infinite; }
+.floating-photo-d { animation: floatPhotoD linear infinite; }
+
+/* ── Button shimmer sweep ────────────────────────────────── */
+@keyframes btnShimmer {
+  0%   { left: -70%; }
+  100% { left: 120%; }
+}
+
+/* ── Gradient pulse (glow breathing trên card đặc biệt) ──── */
+@keyframes gradientPulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}

@@ -1,0 +1,34 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Site cá nhân — cho phép read/write không cần xác thực.
+    // Khi muốn khóa chặt hơn, thêm: if request.auth != null;
+
+    match /calendar/{doc} {
+      allow read, write: if true;
+    }
+
+    match /mood/{doc} {
+      allow read, write: if true;
+    }
+
+    match /wishes/{doc} {
+      allow read, write: if true;
+    }
+
+    match /bucketList/{doc} {
+      allow read, write: if true;
+    }
+
+    match /jarHistory/{userId}/{doc} {
+      allow read, write: if true;
+    }
+
+    match /story/{doc} {
+      allow read: if true;
+      // Chỉ admin mới được write — đổi thành request.auth.uid == "YOUR_UID" nếu cần
+      allow write: if true;
+    }
+  }
+}

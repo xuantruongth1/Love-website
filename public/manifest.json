@@ -1,0 +1,18 @@
+{
+  "name": "Tặng Bé Yêu 💕",
+  "short_name": "Bé Yêu",
+  "description": "Một nơi nhỏ, chỉ dành riêng cho em 💕",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF5F7",
+  "theme_color": "#FF6B9D",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/heart.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
